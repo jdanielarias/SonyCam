@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Sony cameras. Vendor id 0x054C = 1356 (decimal, as Android requires).
+
+     `<usb-device>` is the only element Android's filter parser reads: an earlier
+     attempt at `<usb-interface>` silently matched nothing, which cost the app
+     its auto-launch and its permission grant on attach without any error.
+
+     The class attributes are still safe to use here. AOSP's DeviceFilter checks
+     the device descriptor first and then falls back to each interface, and a
+     camera declares class 0 at device level with 6/1/1 (still image / PTP) on
+     the interface — which is exactly what this needs to match, and what a Sony
+     drive or controller does not have. -->
+<resources>
+    <usb-device vendor-id="1356" class="6" subclass="1" protocol="1" />
+</resources>

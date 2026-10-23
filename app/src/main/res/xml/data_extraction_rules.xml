@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Nada de esta app debe salir del teléfono. Lo único que guarda son
+     transcripciones de diagnóstico con datos del cuerpo conectado (modelo,
+     número de serie, ajustes), y no hay motivo para que una copia de seguridad
+     o una transferencia entre dispositivos se los lleve. -->
+<data-extraction-rules>
+    <cloud-backup><exclude domain="root" /></cloud-backup>
+    <device-transfer><exclude domain="root" /></device-transfer>
+</data-extraction-rules>
